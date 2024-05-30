@@ -37,9 +37,10 @@
             this.greenshotButton2 = new Greenshot.Base.Controls.GreenshotButton();
             this.greenshotButton3 = new Greenshot.Base.Controls.GreenshotButton();
             this.grdResults = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.CapturedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdResults)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,25 +120,12 @@
             this.grdResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Value,
-            this.Type});
+            this.Type,
+            this.CapturedAt});
             this.grdResults.Location = new System.Drawing.Point(18, 180);
             this.grdResults.Name = "grdResults";
             this.grdResults.Size = new System.Drawing.Size(438, 261);
             this.grdResults.TabIndex = 7;
-            // 
-            // Value
-            // 
-            this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Value.HeaderText = "Value";
-            this.Value.Name = "Value";
-            this.Value.Visible = false;
-            // 
-            // Type
-            // 
-            this.Type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Type.HeaderText = "Type";
-            this.Type.Name = "Type";
-            this.Type.Visible = false;
             // 
             // label1
             // 
@@ -147,6 +135,31 @@
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Last values";
+            // 
+            // Value
+            // 
+            this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Value.HeaderText = "Value";
+            this.Value.Name = "Value";
+            this.Value.ReadOnly = true;
+            this.Value.Visible = false;
+            // 
+            // Type
+            // 
+            this.Type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Visible = false;
+            // 
+            // CapturedAt
+            // 
+            this.CapturedAt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;            
+            this.CapturedAt.HeaderText = "CapturedAt";
+            this.CapturedAt.Name = "CapturedAt";
+            this.CapturedAt.ReadOnly = true;            
+            this.CapturedAt.Visible = false;
+
             // 
             // BarcodeDecoderResultForm
             // 
@@ -185,8 +198,9 @@
         private Base.Controls.GreenshotButton greenshotButton2;
         private Base.Controls.GreenshotButton greenshotButton3;
         private System.Windows.Forms.DataGridView grdResults;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CapturedAt;
     }
 }

@@ -1,11 +1,15 @@
-﻿using Greenshot.Base.IniFile;
+﻿using System.Windows.Forms;
+using Greenshot.Base.IniFile;
+using Greenshot.Plugin.BarcodeDecoder.Forms;
 
 namespace Greenshot.Plugin.BarcodeDecoder
 {
-    [IniSection("Barcode", Description = "Barcode parser from image")]
+    [IniSection("BarcodeDecoder", Description = "Decode barcode from image")]
     public class BarcodeDecoderConfiguration : IniSection
     {
-        [IniProperty("DisplayImage", Description = "Display image of barcode with parsed value", DefaultValue = "false")]
-        public bool DisplayImage { get; set; }
+        [IniProperty(nameof(MaxLastValuesSize), Description = "Max size of last values", DefaultValue = "-1")]
+        public int MaxLastValuesSize { get; set; }
+
+        public bool ShowConfigDialog() => new SettingsForm().ShowDialog() == DialogResult.OK;
     }
 }

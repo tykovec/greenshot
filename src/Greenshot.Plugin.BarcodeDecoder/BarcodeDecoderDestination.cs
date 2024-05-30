@@ -68,11 +68,7 @@ namespace Greenshot.Plugin.BarcodeDecoder
                             }
                             else
                             {
-                                barcodeInfo = new BarcodeInfo
-                                {
-                                    Value = result.Text,
-                                    Type = result.BarcodeFormat.ToString()
-                                };
+                                barcodeInfo = new BarcodeInfo(result.Text, result.BarcodeFormat.ToString());
                             }
                         }
 
@@ -91,11 +87,11 @@ namespace Greenshot.Plugin.BarcodeDecoder
             }
             else
             {
-                _plugin.DecodedValues.Insert(0, barcodeInfo);
+                _plugin.AddDecodedValue(barcodeInfo);
 
                 if (_resultForm == null)
                 {
-                    _resultForm = new BarcodeDecoderResultForm(_plugin.DecodedValues);
+                    _resultForm = new BarcodeDecoderResultForm(_plugin.GetDecodedValues());
                     _resultForm.FormClosed += (s, e) => _resultForm = null;
                 }
 
